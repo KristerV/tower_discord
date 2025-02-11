@@ -10,7 +10,8 @@ defmodule TowerDiscord.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       source_url: "https://github.com/kristerv/tower_discord",
-      docs: docs()
+      docs: docs(),
+      package: package()
     ]
   end
 
@@ -32,15 +33,14 @@ defmodule TowerDiscord.MixProject do
 
   defp docs do
     [
-      main: "TowerTelegram",
+      main: "readme",
       extras: ["README.md"]
     ]
   end
 
   defp package do
     [
-      description:
-        "Error tracking and reporting to a Telegram chat (group or channel) using Tower.",
+      description: "Error tracking and reporting to a Discord chat using Tower.",
       files: ~w(lib LICENSE mix.exs README.md CHANGELOG.md),
       licenses: ["Apache-2.0"],
       links: %{

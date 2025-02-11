@@ -24,7 +24,6 @@ defmodule TowerDiscord.Reporter do
         content: build_message(event)
       }
     )
-    |> dbg
 
     :ok
   end
@@ -71,5 +70,4 @@ defmodule TowerDiscord.Reporter do
     do: Atom.to_string(function) <> "/" <> Integer.to_string(Enum.count(parameters))
 
   defp level(), do: Application.get_env(:tower_discord, :level, @default_level)
-  defp webhook_url(), do: Application.get_env(:tower_discord, :webhook_url)
 end
