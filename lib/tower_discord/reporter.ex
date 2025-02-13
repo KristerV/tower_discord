@@ -64,7 +64,7 @@ defmodule TowerDiscord.Reporter do
     do: {format_module(module), format_function(function, parameters)}
 
   defp format_module(module), do: Atom.to_string(module)
-  defp format_function(function, 0), do: Atom.to_string(function) <> "/0"
+  defp format_function(function, n) when is_integer(n), do: Atom.to_string(function) <> "/#{n}"
 
   defp format_function(function, parameters) when is_list(parameters),
     do: Atom.to_string(function) <> "/" <> Integer.to_string(Enum.count(parameters))
